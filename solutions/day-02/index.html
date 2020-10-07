@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Day 02</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            min-height: calc(100vh - 145px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        const myProfile = {
+            name: 'Sandy Krish',
+            title: 'My Profile',
+            gender: 'Male',
+            email: 'santhanakrishnanstark@gmail.com',
+            phno: 9876543231,
+            country: 'India'
+        }
+
+        const header = (
+            <header className='header' style={{backgroundColor: '#eee', padding: '5px 15px'}}>
+                <h1 style={{fontSize: '22px'}}>{myProfile.name}</h1>
+            </header>
+        );
+        const main = (
+            <main className='main' style={{fontSize: '20px'}}>
+                <p>Title: {myProfile.title}</p>  
+                <p>Gender: {myProfile.gender}</p>
+                <p>Email: {myProfile.email}</p>
+                <p>Phno: {myProfile.phno}</p>  
+                <p>Country: {myProfile.country}</p>
+            </main>
+        );
+        const footer = (
+            <footer className='footer' style={{backgroundColor: '#eee', padding: '5px 15px'}}>
+                <p>Thanks for visiting my page.</p>
+            </footer>
+        );
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>
+        );
+
+        ReactDOM.render(app, document.querySelector("#root"));
+    </script>
+</body>
+
+
+</html>
